@@ -1,16 +1,32 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <script>
-        function refreshIFrame() {
-            var x = document.getElementById("presentFrame");
-            x.contentWindow.location.reload();
-            var t = setTimeout(refreshIFrame, 15000);
-        }
-    </script>
+  <title>TV</title>
+	<style>
+		html, body {
+			background: black;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<script>
+		// update with the desired time to refresh the presentation (in minutes)
+		var refreshMinutes = 5;
+		
+		var timer=setInterval(function(){refreshFrame()}, refreshMinutes*60*1000);
+		function refreshFrame()
+		{
+			var iframe = document.getElementById('presentFrame');
+			var iframeURL = iframe.src;
+			iframe.src = iframeURL;
+		}
+	</script>
 </head>
-<body onload="refreshIFrame()">
-
-    <iframe id="presentFrame" src="https://docs.google.com/viewer?srcid=2PACX-1vTRA6sLITgovi359cpvNb2EMsJfcxpU8Iliec8FT6FqKDCnJJEKRrVh8BREB3E7dkhzo1H_l129AT3J&pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="800" height="600" style="border: none;"></iframe>
-    
+<body>
+<!-- update the presentation ID with your own presentation -->
+<!-- update the &delayms= with the time to show each slide (in milliseconds) -->
+<iframe id="presentFrame" src="https://docs.google.com/presentation/d/e/2PACX-1vTRA6sLITgovi359cpvNb2EMsJfcxpU8Iliec8FT6FqKDCnJJEKRrVh8BREB3E7dkhzo1H_l129AT3J/pub?start=true&loop=true&delayms=5000" frameborder="0" width="100%" height="100%" embedded="true" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 </body>
 </html>
