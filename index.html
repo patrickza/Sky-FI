@@ -2,13 +2,15 @@
 <head>
     <script>
         function refreshIFrame() {
-            var x = document.getElementById("TVIframe");
+            var x = document.getElementById("presentFrame");
             x.contentWindow.location.reload();
             var t = setTimeout(refreshIFrame, 15000);
         }
     </script>
 </head>
 <body onload="refreshIFrame()">
-    <iframe id="TVIframe" src="https://docs.google.com/presentation/d/e/2PACX-1vTRA6sLITgovi359cpvNb2EMsJfcxpU8Iliec8FT6FqKDCnJJEKRrVh8BREB3E7dkhzo1H_l129AT3J/embed?start=true&loop=true&delayms=5000" frameborder="0" width="1868" height="1080" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+    <iframe id="presentFrame" src="https://docs.google.com/viewer?srcid=2PACX-1vTRA6sLITgovi359cpvNb2EMsJfcxpU8Iliec8FT6FqKDCnJJEKRrVh8BREB3E7dkhzo1H_l129AT3J&pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="800" height="600" style="border: none;"></iframe>
+    
 </body>
 </html>
